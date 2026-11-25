@@ -82,7 +82,7 @@ jobs:
           echo "Tailscale IPv4: $TS_IP"
           echo "Exit Node advertisement: enabled"
           echo "=========================================="        
-          tailscale set --ssh
+          sudo tailscale set --ssh
 
       - name: 4. Keep Runner Alive
         shell: bash
