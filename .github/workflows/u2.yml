@@ -39,7 +39,7 @@ jobs:
       - name: 3. Install and Start Tailscale
         shell: bash
         env:
-          TAILSCALE_AUTHKEY: ${{ secrets.TAILSCALE_AUTHKEY }}
+          TAILSCALE_AUTHKEY: ${{ secrets.TAILSCALE_AUTHKEY2 }}
         run: |
           set -euo pipefail
 
@@ -82,6 +82,7 @@ jobs:
           echo "Tailscale IPv4: $TS_IP"
           echo "Exit Node advertisement: enabled"
           echo "=========================================="    
+          sudo tailscale set --ssh
 
       - name: 4. Install mhs
         shell: bash
